@@ -1,0 +1,42 @@
+{% extends '::backend.html.twig' %}
+
+
+{% block contenido %}
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>Listado de productos</h2>
+                <a href="{{ path('producto_new') }}" class="pull-right btn btn-dark"> <i class="fa fa-beer">
+                                                                </i> Nuevo producto </a>
+                 <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <table id="example" class="table table-striped responsive-utilities jambo_table">
+                    <thead>
+                        <tr class="headings">            
+                          <th>Nombre </th>
+                          <th>precio </th>                      
+                          <th class=" no-link last"><span class="nobr">Action</span>
+                          </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                      {% for entity in entities %}
+                      <tr>
+                        <td><a href="{{ path('producto_show', {'id':entity.id }) }}">{{ entity.nombre }}</a></td>
+                        <td><a href="{{ path('producto_show', {'id':entity.id }) }}">{{ entity.precio }}</a></td>
+        
+                        <td>
+                          <a href="{{ path('producto_show', {'id':entity.id }) }}">Mostrar</a>
+                          <a href="{{ path('producto_edit', {'id':entity.id }) }}">Editar</a>
+                        </td>
+                      </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+            </div>
+        </diV>
+    </div>
+</div>
+{% endblock %}

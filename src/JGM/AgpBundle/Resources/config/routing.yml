@@ -1,0 +1,15 @@
+AgpBundle_default:
+    resource: "@AgpBundle/Resources/config/routing/default.yml"
+    prefix:   /
+
+agp_cliente:
+    resource: "@AgpBundle/Resources/config/routing/cliente.yml"
+    prefix:   /cliente
+    
+agp_producto:
+    resource: "@AgpBundle/Resources/config/routing/producto.yml"
+    prefix:   /producto
+        
+agp_entrega:
+    resource: "@AgpBundle/Resources/config/routing/entrega.yml"
+    prefix:   /entrega
